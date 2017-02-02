@@ -16,7 +16,7 @@ HTML_Codes = (
 
 def spell_check(s):
     q = '+'.join(s.split())
-    time.sleep(  randint(0,2) ) #relax and don't let google be angry
+    time.sleep(  randint(0,1) ) #relax and don't let google be angry
     r = requests.get("https://www.google.co.uk/search?q="+q)
     content = r.text
     start=content.find(START_SPELL_CHECK) 
