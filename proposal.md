@@ -17,7 +17,8 @@ Determine if pairs of Quora questions are duplicate. It is interesting to aggreg
    * character learning/two-byte encodings
 
 ## Related Work
-Basic paper about LSTM with attention (to determine logical entailment): Rocktäschel et al. 100D LSTMs w/ word-by-word attention. [https://arxiv.org/pdf/1509.06664v1.pdf]
+Basic paper about LSTM with attention (to determine logical entailment): 
+* Rocktäschel et al. 100D LSTMs w/ word-by-word attention. [https://arxiv.org/pdf/1509.06664v1.pdf]
 
 ## Evaluation Plan
 * F1
