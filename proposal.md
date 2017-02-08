@@ -18,3 +18,6 @@ Papers about LSTM with attention:
 
 ## Evaluation Plan
 * F1
+* We will produce tuning plots for hyperparameters: 
+    ** $$\alpha$$ in cross entropy loss to weight positive examples versus negative examples
+* We will use cross-validation with F1, look at confusion matrix, error analysis by hand.
