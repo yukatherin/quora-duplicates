@@ -9,9 +9,12 @@ Determine if pairs of Quora questions are duplicate. It is interesting to aggreg
 400k pairs, 37% positive
 
 ## Methodology/Algorithm
-* Baseline: Siamese net with summed GloVe vectors
-* LSTM with attention
-* smart undersampling in the majority class by choosing hard examples in mini-batch allocation [http://www.idiap.ch/~fleuret/SMLD/2014/SMLD2014_-_Olivier_Canevet_-_Efficient_mining_of_hard_examples_for_object_detection.pdf]
+* Primary goals:
+   * Baseline: Siamese net with summed GloVe vectors
+   * LSTM with attention
+* Secondary goals:
+   * smart undersampling in the majority class by choosing hard examples in mini-batch allocation [http://www.idiap.ch/~fleuret/SMLD/2014/SMLD2014_-_Olivier_Canevet_-_Efficient_mining_of_hard_examples_for_object_detection.pdf]
+   * character learning/two-byte encodings
 
 ## Related Work
 Papers about LSTM with attention:
