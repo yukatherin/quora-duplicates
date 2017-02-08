@@ -2,7 +2,7 @@
 ?
 
 ## Problem Description
-Determine if pairs of Quora questions are duplicate. It is interesting to aggregate answers on duplicate questions.
+Determine if pairs of Quora questions are duplicate. It is interesting to aggregate answers on duplicate questions, and suggest similar questions to users.
 
 ## Data
 [https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs]
