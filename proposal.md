@@ -25,7 +25,7 @@ The pairs are hand-labeled. Examples:
 
 ## Methodology/Algorithm
 * Baseline: 
-  * Simple 1-layer methods like logistic regression or SVM will not work well without feature engineering relatedness-features (e.g. cosine similarity on tf-idf), which we don't want time on. 
+  <* 1-layer methods like logistic regression or SVM might not work well without feature engineering relatedness-features (e.g. cosine similarity on tf-idf), which we do not want to spend time on in this class.> 
   * We think our baseline for question relatedness should be a Siamese net, with shared parameters W and b,  h1=f(Wx1+b), h2=f(Wx2+b) where x1 and x2 are the summed GloVe vectors for questions 1 and 2, an activation layer between h1 and h2, and cross entropy loss on the output of the activation layer.
 * Primary goals:
    * Baseline: Siamese net with summed GloVe vectors
