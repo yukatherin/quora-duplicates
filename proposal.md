@@ -10,9 +10,8 @@ Kai Sheng Tai
 Determine if pairs of Quora questions containing similar words are exact duplicates in meaning.  The solution to this problem is interesting to aggregate answers on duplicate questions, and suggest similar questions to users posting new questions on Quora.
 
 ## Data
-[https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs]
-400k pairs, 37% positive.
-The pairs are hand-labeled. Examples:
+* The data is a public dataset from Quora: [https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs]
+* The data contains 400k pairs of questions, 37% are positive examples. The pairs are hand-labeled.
 * Example 1: 
   * Question1 - "How can I increase the speed of my internet connection while using a VPN?" 
   * Question2 - "How can Internet speed be increased by hacking through DNS?"
