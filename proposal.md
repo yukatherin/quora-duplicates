@@ -1,12 +1,25 @@
+## Team members
+Katherine Yu (yukather), Genki Kondo (genki), Ramon Tuason (rtuason)
+
 ## Mentor
 Kai Sheng Tai
 
 ## Problem Description
-Determine if pairs of Quora questions are duplicate. It is interesting to aggregate answers on duplicate questions, and suggest similar questions to users.
+Determine if pairs of Quora questions containing similar words are exact duplicates in meaning.  The solution to this problem is interesting to aggregate answers on duplicate questions, and suggest similar questions to users posting new questions on Quora.
 
 ## Data
 [https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs]
-400k pairs, 37% positive
+400k pairs, 37% positive.
+The pairs are hand-labeled. Examples:
+* Example 1: 
+  * Question1 - "How can I increase the speed of my internet connection while using a VPN?" 
+  * Question2 - "How can Internet speed be increased by hacking through DNS?"
+  * This pair is negative since hacking through DNS is to increase internet speed is different from increasing speed while you are using VPN.
+* Example 2:
+  * Question1 - "Why are so many Quora users posting questions that are readily answered on Google?"
+  * Question2 - "Why do people ask Quora questions which can be answered easily by Google?"
+  * This pair is positive since the meanings are exactly equivalent up to human judgement: Quora users posting questions is the same as people asking Quora questions, and "readily" is equivalent to "easily."
+
 
 ## Methodology/Algorithm
 * Primary goals:
