@@ -16,11 +16,11 @@ The pairs are hand-labeled. Examples:
 * Example 1: 
   * Question1 - "How can I increase the speed of my internet connection while using a VPN?" 
   * Question2 - "How can Internet speed be increased by hacking through DNS?"
-  * This pair is negative since hacking through DNS is to increase internet speed is different from increasing speed while you are using VPN.
+  * This pair is negative, since the idea of hacking through DNS is to increase internet speed is different from increasing speed while you are using VPN.
 * Example 2:
   * Question1 - "Why are so many Quora users posting questions that are readily answered on Google?"
   * Question2 - "Why do people ask Quora questions which can be answered easily by Google?"
-  * This pair is positive since the meanings are exactly equivalent up to human judgement: Quora users posting questions is the same as people asking Quora questions, and "readily" is equivalent to "easily."
+  * This pair is positive, since the meanings are exactly equivalent up to human judgement: Quora users posting questions is the same as people asking Quora questions, and "readily" is equivalent to "easily."
 
 
 ## Methodology/Algorithm
