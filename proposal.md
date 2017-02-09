@@ -1,5 +1,5 @@
 ## Mentor
-?
+Kai Sheng Tai
 
 ## Problem Description
 Determine if pairs of Quora questions are duplicate. It is interesting to aggregate answers on duplicate questions, and suggest similar questions to users.
