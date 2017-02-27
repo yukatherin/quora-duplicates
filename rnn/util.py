@@ -41,6 +41,16 @@ def read_dat(fstream):
         ret.append(current_toks)
     return ret
 
+def read_lab(fstream):
+    """
+    Reads 1/0 from each line.
+    """
+    ret = []
+
+    for line in fstream:
+        ret.append(int(line))
+    return ret
+
 def test_read_dat():
     input_ = [
         "EU",
@@ -429,3 +439,14 @@ def print_sentence(output, sentence, labels, predictions):
         output.write(token)
         output.write(" " * (spacing - len(token) + 1))
     output.write("\n")
+
+if __name__ == "__main__":
+
+    # test read_lab
+    with open('../../data/labels_train.conll') as f:
+        dev_lab = read_lab(f)
+        print len(dev_lab)
+        print dev_lab[:50]
+
+    # test read_dat
+    test_read_dat()

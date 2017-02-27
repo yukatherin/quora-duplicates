@@ -9,7 +9,7 @@ import logging
 from collections import Counter
 
 import numpy as np
-from util import read_dat, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
+from util import read_dat, read_lab, one_hot, window_iterator, ConfusionMatrix, load_word_vector_mapping
 from defs import LBLS, NONE, LMAP, NUM, UNK, EMBED_SIZE
 
 logger = logging.getLogger(__name__)
@@ -116,19 +116,29 @@ class ModelHelper(object):
 
 def load_and_preprocess_data(args):
     logger.info("Loading training data...")
-    train = read_conll(args.data_train)
-    logger.info("Done. Read %d sentences", len(train))
+    train_q1 = read_dat(args.data_train1)
+    train_q2 = read_dat(args.data_train2)
+    train_lab = read_lab(args.data_train_labels)
+    assert len(train_q1) == len(train_q2)
+    assert len(train_q1) == len(train_lab)
+    logger.info("Done. Read %d sentences", len(train_lab))
     logger.info("Loading dev data...")
-    dev = read_conll(args.data_dev)
-    logger.info("Done. Read %d sentences", len(dev))
+    dev_q1 = read_dat(args.data_dev1)
+    dev_q2 = read_dat(args.data_dev2)
+    dev_lab = read_lab(args.data_dev_labels)
+    assert len(dev_q1) == len(dev_q2)
+    assert len(dev_q1) == len(dev_lab)
+    logger.info("Done. Read %d sentences", len(dev_lab))
 
-    helper = ModelHelper.build(train)
+    helper = ModelHelper.build(train_q1)
 
     # now process all the input data.
-    train_data = helper.vectorize(train)
-    dev_data = helper.vectorize(dev)
+    train_dat1 = helper.vectorize(train_q1)
+    train_dat2 = helper.vectorize(train_q2)
+    dev_dat1   = helper.vectorize(dev_q1)
+    dev_dat2   = helper.vectorize(dev_q2)
 
-    return helper, train_data, dev_data, train, dev
+    return helper, train_dat1, train_dat2, train_lab, dev_dat1, dev_dat2, dev_lab, train_q1, train_q2, dev_q1, dev_q2
 
 def load_embeddings(args, helper):
     embeddings = np.array(np.random.randn(len(helper.tok2id) + 1, EMBED_SIZE), dtype=np.float32)
