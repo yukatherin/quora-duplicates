@@ -20,53 +20,49 @@ logger = logging.getLogger("hw3")
 logger.setLevel(logging.DEBUG)
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
-def read_conll(fstream):
+def read_dat(fstream):
     """
     Reads a input stream @fstream (e.g. output of `open(fname, 'r')`) in CoNLL file format.
-    @returns a list of examples [(tokens), (labels)]. @tokens and @labels are lists of string.
+    @returns a list of examples [(tokens), ]. @tokens are lists of string.
     """
     ret = []
 
-    current_toks, current_lbls = [], []
+    current_toks = []
     for line in fstream:
         line = line.strip()
         if len(line) == 0 or line.startswith("-DOCSTART-"):
             if len(current_toks) > 0:
-                assert len(current_toks) == len(current_lbls)
-                ret.append((current_toks, current_lbls))
-            current_toks, current_lbls = [], []
+                ret.append(current_toks)
+            current_toks = []
         else:
-            assert "\t" in line, r"Invalid CONLL format; expected a '\t' in {}".format(line)
-            tok, lbl = line.split("\t")
+            tok = line
             current_toks.append(tok)
-            current_lbls.append(lbl)
     if len(current_toks) > 0:
-        assert len(current_toks) == len(current_lbls)
-        ret.append((current_toks, current_lbls))
+        ret.append(current_toks)
     return ret
 
-def test_read_conll():
+def test_read_dat():
     input_ = [
-        "EU	ORG",
-        "rejects	O",
-        "German	MISC",
-        "call	O",
-        "to	O",
-        "boycott	O",
-        "British	MISC",
-        "lamb	O",
-        ".	O",
+        "EU",
+        "rejects",
+        "German",
+        "call",
+        "to",
+        "boycott",
+        "British",
+        "lamb",
+        ".",
         "",
-        "Peter	PER",
-        "Blackburn	PER",
+        "Peter",
+        "Blackburn",
         "",
         ]
     output = [
-        ("EU rejects German call to boycott British lamb .".split(), "ORG O MISC O O O MISC O O".split()),
-        ("Peter Blackburn".split(), "PER PER".split())
+        "EU rejects German call to boycott British lamb .".split(),
+        "Peter Blackburn".split(),
         ]
 
-    assert read_conll(input_) == output
+    assert read_dat(input_) == output
 
 def write_conll(fstream, data):
     """
