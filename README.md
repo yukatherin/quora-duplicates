@@ -1,5 +1,4 @@
 # QuoraDuplicates
-CS224N Final Project: Determining whether two questions are duplicates of each other.
 
 ## How to run the models
 
@@ -103,17 +102,3 @@ CS224N Final Project: Determining whether two questions are duplicates of each o
      ```
      python scripts/getBestF1ScoreFromLogs.py results/lstm/XXX/log
      ```
-
-## Proposal Google Doc:
-
-https://docs.google.com/document/d/1b9ItoYLbtbE02FOlK1V5eEH_6HvlvUDF_X-QHQPzDoo/edit?usp=sharing 
-
-## Quora Dataset Details:
-
-https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs
-
-## Related Work
-
-- Reasoning about Entailment with Neural Attention https://arxiv.org/pdf/1509.06664v1.pdf
-- Siamese Recurrent Architectures for Learning Sentence Similarity http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf 
-- Efficient mining of hard examples for object detection http://www.idiap.ch/~fleuret/SMLD/2014/SMLD2014_-_Olivier_Canevet_-_Efficient_mining_of_hard_examples_for_object_detection.pdf 
