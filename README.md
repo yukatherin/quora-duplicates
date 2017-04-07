@@ -1,4 +1,8 @@
 # QuoraDuplicates
+Elkhan Dadashov, Sukolsak Sakshuwong, Katherine Yu
+
+1. tensorflow 0.12 or 1.1.0
+2. numpy
 
 ## How to run the models
 
