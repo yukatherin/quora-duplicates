@@ -16,20 +16,18 @@ HTML_Codes = (
 
 def spell_check(s):
     q = '+'.join(s.split())
-    time.sleep(  randint(0,1) ) #relax and don't let google be angry
+    time.sleep(  randint(0,2) ) #relax and don't let google be angry
     r = requests.get("https://www.google.co.uk/search?q="+q)
     content = r.text
-    start=content.find(START_SPELL_CHECK) 
-    if ( start > -1 ):
-        start = start + len(START_SPELL_CHECK)
-        end=content.find(END_SPELL_CHECK)
-        search= content[start:end]
-        search = re.sub(r'<[^>]+>', '', search)
-        for code in HTML_Codes:
-            search = search.replace(code[1], code[0])
-        search = search[1:]
-    else:
-        search = s
+    start=content.find(START_SPELL_CHECK)
+    assert start > -1
+    start = start + len(START_SPELL_CHECK)
+    end=content.find(END_SPELL_CHECK)
+    search= content[start:end]
+    search = re.sub(r'<[^>]+>', '', search)
+    for code in HTML_Codes:
+        search = search.replace(code[1], code[0])
+    search = search[1:]
     return search ;
 
 # test
